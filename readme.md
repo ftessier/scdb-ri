@@ -10,7 +10,7 @@ The **Simulation Comparison Database (SCDB)** provides a systematic framework fo
 
 Just as the KCDB establishes equivalence between measurement standards maintained by National Metrology Institutes (NMIs), the SCDB establishes equivalence between simulation results produced by different Monte Carlo software, creating a traceable foundation for computational ionizing radiation transport research.
 
-## The Problem
+## The problem
 
 Monte Carlo simulations are essential for radiation dosimetry, treatment planning, industrial radiation processing, and radiation protection. Yet unlike experimental measurements, simulations lack:
 
@@ -22,7 +22,7 @@ Monte Carlo simulations are essential for radiation dosimetry, treatment plannin
 
 Current practice relies on ad-hoc literature comparisons and uncoordinated validation studies. Each research group validates independently, making results difficult to compare and trust difficult to establish.
 
-## The Solution
+## The solution
 
 SCDB implements the KCDB model for simulations:
 
