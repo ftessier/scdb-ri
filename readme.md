@@ -1,4 +1,4 @@
-# SCDB-RI: Simulation Comparison Database — Rayonnements Ionisants
+# Simulation Comparison Database — Rayonnements Ionisants
 
 **Metrological traceability for simulations of ionizing radiation transport**
 
@@ -6,9 +6,9 @@
 
 ## Overview
 
-The **Simulation Comparison Database (SCDB)** provides a systematic framework for validating Monte Carlo radiation transport codes through rigorous inter-code comparisons, modeled after the BIPM Key Comparison Database (KCDB).
+The **Simulation Comparison Database (SCDB)** provides a systematic framework for verifying Monte Carlo radiation transport software through rigorous inter-comparisons, modelled after the BIPM Key Comparison Database (KCDB). This SCDB-RI repository pertains to Monte Carlo simulations for ionizing radiation (RI, for *Rayonnement Ionisant*).
 
-Just as the KCDB establishes equivalence between measurement standards maintained by National Metrology Institutes (NMIs), the SCDB establishes equivalence between simulation results produced by different Monte Carlo software, creating a traceable foundation for computational ionizing radiation transport research.
+Just as the KCDB establishes equivalence between measurement standards maintained by National Metrology Institutes (NMIs), the SCDB establishes equivalence between simulation results produced by different Monte Carlo software, creating a traceable foundation for computational ionizing radiation transport.
 
 ## The problem
 
@@ -18,7 +18,7 @@ Monte Carlo simulations are essential for radiation dosimetry, treatment plannin
 - **Reference values** calculated from first principles
 - **Certified simulation capabilities** analogous to Calibration and Measurement Capabilities (CMCs)
 - **Public database** of validated simulation accuracy and efficiency
-- **Traceability chain** from simulation results to fundamental physics data
+- **Traceability chain** to verified simulation results
 
 Current practice relies on ad-hoc literature comparisons and uncoordinated validation studies. Each research group validates independently, making results difficult to compare and trust difficult to establish.
 
