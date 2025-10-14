@@ -93,7 +93,7 @@ For each case:
 - Run 1e9 independent incident particles
 - Track until all particles are absorbed (or escape)
 - Sum all energy deposition events, compute difference with incident energy
-- Compute the root-mean-square difference between incident and deposited energy
+- Track the maximum difference between incident and deposited energy
 
 ### 2.8. Report
 
@@ -104,11 +104,12 @@ For each case:
 
 #### Simulation results
 
-- For each case, report the root-mean-square difference between incident and deposited energy
-- No uncertainty is required since results should be exact within floating-point precision
+- For each case, report the maximum difference between incident and deposited energy
+- Normalize the maximum difference to the incident energy
+- No uncertainty is recorded since results should be exact within floating-point precision
 - Provide the results as a .csv file according to the following template:
 
   ```csv
-  software,material,keV,rms
+  software,material,keV,maximum
   EGSnrc,H2O,10,1.34e-15
   ```
