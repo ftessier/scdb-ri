@@ -13,8 +13,9 @@
   - [2.4. Geometry](#24-geometry)
   - [2.5. Source](#25-source)
   - [2.6. Physics](#26-physics)
-  - [2.7. Scoring](#27-scoring)
-  - [2.8. Report](#28-report)
+  - [2.7. Measurand](#27-measurand)
+  - [2.8. Method](#28-method)
+  - [2.9. Report](#29-report)
 
 ## 1. Overview
 
@@ -24,7 +25,7 @@ Verify that Monte Carlo simulation correctly conserve energy during particle tra
 
 ### 1.2. Scope
 
-Verify energy conservation for monoenergetic electrons and photons (1 keV to 20 MeV) in infinite homogeneous media. Test matrix includes 13 materials: 12 representative elements spanning Z = 1 to 92 plus liquid water. Each software simulates 312 cases (2 particles × 12 materials × 13 energies) with the expected result that total deposited energy equals initial particle energy within floating-point precision. This benchmark tests internal algorithm consistency rather than agreement with experimental data.
+Verify energy conservation for monoenergetic electrons and photons (1 keV to 20 MeV) in infinite homogeneous media. Test matrix includes 13 materials: 12 representative elements spanning, plus air and liquid water. Each software simulates 72 cases (2 particles × 9 materials × 4 energies) with the expected result that total deposited energy equals initial particle energy within floating-point precision. This benchmark tests internal algorithm consistency and floating point precision, rather than agreement with experimental data.
 
 ### 1.3. Expectation
 
@@ -39,13 +40,13 @@ The total energy deposited per history is equal to the initial particle energy, 
 
 ### 2.2. Materials
 
-- **Elements:** Z = 1, 6, 7, 8, 13, 26, 29, 47, 74, 82, 92 (representative sample of pure elements)
-- **Compounds:** Water
+- **Elements:** Z = 1, 6, 13, 27, 47, 74, 82 (representative sample of pure elements)
+- **Compounds:** Air, Water
 - **State:** Natural state at room temperature (gas, liquid, solid)
 
 ### 2.3. Energies
 
-- **Kinetic energies:** 2 keV, 5 keV, 10 keV, 20 keV, 50 keV, 100 keV, 200 keV, 500 keV, 1 MeV, 2 MeV, 5 MeV, 10 MeV, 20 MeV, 50 MeV
+- **Kinetic energies:** 10 keV, 100 keV, 1 MeV, 10 MeV
 
 ### 2.4. Geometry
 
@@ -61,52 +62,42 @@ The total energy deposited per history is equal to the initial particle energy, 
 
 ### 2.5. Source
 
-#### Type
-
-- Isotropic point source at origin
-
-#### Initial conditions
-
 - Position: (0, 0, 0)
 - Direction: Isotropic (4π)
 - Energy: Monoenergetic
-- Particle type: Single species per simulation
+- Particle type: Electron or Photon
 
 ### 2.6. Physics
-
-#### Transport
 
 - Default or documented transport parameters and physical cross sections
 - Default production thresholds and transport cutoffs
 - No variance reduction techniques
 
-### 2.7. Scoring
+### 2.7. Measurand
 
-#### Measurand
+- Energy deposited in medium, per history (keV)
 
-- Total energy deposited in medium (keV)
+### 2.8. Method
 
-#### Method
+For each test case:
 
-For each case:
-
-- Run 1e9 independent incident particles
+- Run 1e9 independent incident particles (histories)
 - Track until all particles are absorbed (or escape)
-- Sum all energy deposition events, compute difference with incident energy
+- Sum all energy deposition events in history
+- Compute the difference between deposited energy and source energy
 - Track the maximum difference between incident and deposited energy
 
-### 2.8. Report
+### 2.9. Report
 
-#### Input files
+#### Input
 
-- Provide simulation input files for all cases
+- Simulation input files for all cases (or a script to generate them from a template)
 - Instructions to reproduce the simulations from a fresh installation of the software
 
-#### Simulation results
+#### Results
 
-- For each case, report the maximum difference between incident and deposited energy
-- Normalize the maximum difference to the incident energy
-- No uncertainty is recorded since results should be exact within floating-point precision
+- For each case, report the maximum difference between incident and deposited energy, normalized to the incident energy.
+- No uncertainty is recorded since results should be exact within floating-point precision.
 - Provide the results as a .csv file according to the following template:
 
   ```csv
