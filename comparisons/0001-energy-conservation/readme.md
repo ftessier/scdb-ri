@@ -1,4 +1,4 @@
-# SC-0001: Energy conservation in infinite media <!-- omit in toc -->
+# sc-ri-0001: Energy conservation in infinite media <!-- omit in toc -->
 
 ## Table of contents <!-- omit in toc -->
 
